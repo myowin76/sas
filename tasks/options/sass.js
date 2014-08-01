@@ -2,7 +2,6 @@ module.exports = {
 
 	dev: {
 		options: {
-			require: 'susy',
 			compass: true,
 			style: 'expanded',
 			lineNumbers: true

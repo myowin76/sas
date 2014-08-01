@@ -21,7 +21,7 @@ module.exports = {
     tasks: ['cssmin']
   },
   scripts: {
-    files: ['src/scripts/scripts.js'],
+    files: ['src/scripts/*.js'],
     tasks: ['uglify'],
     options: {
       spawn: false,

@@ -1,0 +1,120 @@
+.articles{
+
+	@include clearfix;
+	width: columns(12);
+
+	section{
+		@include clearfix;
+
+		float: left;
+		width: 100%;
+		margin-bottom: 2em;
+
+		header{
+			height: 150px;
+			@include clearfix;
+		}
+
+		figure{
+			img{
+				width: 100%;
+			}
+		}
+
+		.tags{
+			ul{
+				li{
+					float: left;
+					padding: 2px 8px;
+					border-radius: 12px;
+					background-color: $light-gray;
+					margin-right: 0.5em;
+				}
+			}
+		}
+	}
+}
+
+.snap{
+	@include clearfix();
+	@include prefix(0);
+
+	figure{
+		width: columns(12);
+		img{
+			max-width: 100%;
+		}
+	}
+
+	.features{
+		
+	}
+}
+
+
+
+@include at-breakpoint($tablets) {
+	
+	.articles{
+
+		section{
+
+			width: columns(4);
+			margin-right: 1.4em;
+
+			&:nth-child(2n+1) {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	.snap{
+		
+
+		figure{
+			width: columns(4);
+			float: right;
+			img{
+				max-width: 100%;
+			}
+		}
+
+		.features{
+			width: columns(4);
+			@include prefix(0);	
+		}
+	}
+
+}// breakpoint ends
+
+@include at-breakpoint($desktop){
+	
+	.articles{
+
+		section{
+			width: columns(3);
+			
+			&:nth-child(2n+1) {
+				margin-right: 1.4em;
+			}
+
+			&:nth-child(4n+1) {
+				margin-right: 0;
+			}
+
+		}
+	}
+
+	.snap{
+		figure{
+			width: columns(6);
+			float: right;
+		}
+
+		.features{
+			width: columns(5);
+			float: left;
+			@include prefix(1);
+		}
+	}
+}

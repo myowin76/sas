@@ -6,46 +6,103 @@
 <html class='no-js' lang='en'>
   <!--<![endif]-->
   <head>
-    	<meta charset='utf-8' />
-    	<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-    	<meta content='width=device-width, initial-scale=1.0 maximum-scale=1' name='viewport' />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+    <meta charset='utf-8' />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+    <meta content='width=device-width, initial-scale=1.0 maximum-scale=1' name='viewport' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
     
-    	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-    	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     
-    	<script src='/scripts/modernizr.min.js'></script>
+    <script src='/scripts/libs/modernizr.min.js'></script>
     
-    	<link href='/styles/styles.css' rel='stylesheet' />
-    	<!--[if lt IE 9]>
-    		<link href='/styles/ie.css' rel='stylesheet' />	  	  	
-    		<script src='/scripts/ie/media.match.min.js'></script>
-    	<![endif]-->
-    	
-    	
+    <link href='/styles/styles.css' rel='stylesheet' />
+    <!--[if lt IE 9]>
+    	<link href='/styles/ie.css' rel='stylesheet' />	  	  	
+    	<script src='/scripts/ie/media.match.min.js'></script>
+    <![endif]-->
+    
+    
     
     <title>Aung Win - SAS</title>
     <meta content='' name='description' />
 
   </head>
 
-  <body>
+  <body ng-app="ArticlesLoader" >
     
     <div id="container">
       <header>
-        header
-        
+        <h1>Case Studies</h1>
       </header>
-      <p>Index</p>
+      
+      <article class="snap">
+        <figure>
+          <img src="../images/image1.jpg" alt="" />
+        </figure>
+        <div class="features">
+          <h2>Features article story title</h2>
+          <p>
+          	Veniam ad laborum aliquip qui sint ea consequat. Dolore sint ea fugiat laboris excepteur incididunt non officia aliqua tempor do culpa ad elit. Anim enim voluptate reprehenderit nulla nostrud minim adipisicing elit quis excepteur in. Amet laborum pariatur in et reprehenderit quis ex aliquip. Minim nostrud voluptate est est nostrud consequat mollit officia exercitation cupidatat.
+          </p>
+        </div>
+      </article>  
+      <div ng-controller="ArticlesController" ng-init="init()">
+  <article class="articles">
+          
+    <div class="filter">
+      
+      <div class="count">
+        {{article_count}} articles tagged Water
+      </div>
+
+      <div class="sort">
+        <label>Sort by:
+          <select ng-model="sortLabel" ng-options="label for label in sortLabels">
+            
+          </select>
+        </label>
+        
+      </div>
+    </div>
+   
+    <section ng-repeat="article in articles | orderBy:articleOrder:direction">
+      
+      <figure>
+        <img ng-src="{{article.image}}" alt="" />
+      </figure>
+      
+      <header>
+        <h2>{{article.title}}</h2>
+        <h4>{{article.date.plain}}</h4> 
+        <p>
+          {{article.caption}}
+        </p>
+      </header> 
+      
+      <footer class="tags">
+        <ul>
+          <li ng-repeat="tag in article.tags">{{tag}}</li>
+        </ul>
+      </footer>
+    </section>
+
+
+  </article>
+</div>    
+      
     </div>
     
     <footer>
         
     </footer>
+    <!-- <script src='scripts/libs/jquery.min.js'></script>
+    <script src='scripts/libs/enquire.min.js'></script> -->
     
-    <script src='scripts/jquery.min.js'></script>
-    <script src='scripts/enquire.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js'></script>
+    <script src='https://code.angularjs.org/1.2.21/angular-route.min.js'></script>
+    
+    <script src='scripts/ArticlesController.js'></script>
     <script src='scripts/scripts.min.js'></script>
-    <!-- <script src="scripts/libs/require.min.js" data-main="scripts/main.js"></script> -->
   </body>
 </html>

@@ -3,9 +3,8 @@
 @import "compass/css3";
 @import "compass/utilities";
 
-
 @import "partials/variables";
+@import "partials/layout";
+@import "partials/articles";
+@import "partials/filter";
 
-#container{
-	@include container;
-}

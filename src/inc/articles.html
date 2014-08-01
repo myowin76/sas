@@ -1,0 +1,43 @@
+<div ng-controller="ArticlesController" ng-init="init()">
+  <article class="articles">
+          
+    <div class="filter">
+      
+      <div class="count">
+        {{article_count}} articles tagged Water
+      </div>
+
+      <div class="sort">
+        <label>Sort by:
+          <select ng-model="sortLabel" ng-options="label for label in sortLabels">
+            
+          </select>
+        </label>
+        
+      </div>
+    </div>
+   
+    <section ng-repeat="article in articles | orderBy:articleOrder:direction">
+      
+      <figure>
+        <img ng-src="{{article.image}}" alt="" />
+      </figure>
+      
+      <header>
+        <h2>{{article.title}}</h2>
+        <h4>{{article.date.plain}}</h4> 
+        <p>
+          {{article.caption}}
+        </p>
+      </header> 
+      
+      <footer class="tags">
+        <ul>
+          <li ng-repeat="tag in article.tags">{{tag}}</li>
+        </ul>
+      </footer>
+    </section>
+
+
+  </article>
+</div>

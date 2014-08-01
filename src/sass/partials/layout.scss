@@ -1,0 +1,55 @@
+body{
+	font-family: $fonts;
+	font-size: 14px;
+	line-height: 1.4em;
+}
+
+h1, h2, h3, h4{
+	font-weight: bold;
+	margin: 0.5em 0;
+}
+
+h1{
+	font-size: 23px;
+}	
+
+h2{
+	font-size: 18px;
+}
+
+h3{
+	font-size: 14px;
+}
+
+h4{
+	font-size: 12px;
+}
+
+img{
+	display: block;
+}
+
+header{
+	padding: 0.5em 0;
+	
+	h1{
+		@include prefix(0);
+	}
+}
+
+#container{
+	@include container($total-columns, $tablets, $desktop);
+	// @include susy-grid-background;
+}
+
+@include at-breakpoint($tablets) {
+	
+}
+
+@include at-breakpoint($desktop) {
+	header{
+		h1{
+			@include prefix(1);
+		}
+	}	
+}
