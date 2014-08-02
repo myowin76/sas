@@ -11,7 +11,7 @@
 		margin-bottom: 2em;
 
 		header{
-			height: 150px;
+			height: 145px;
 			@include clearfix;
 		}
 
@@ -25,10 +25,11 @@
 			ul{
 				li{
 					float: left;
-					padding: 2px 8px;
+					padding: 0px 4px;
 					border-radius: 12px;
 					background-color: $light-gray;
-					margin-right: 0.5em;
+					margin-right: 0.2em;
+					font-size: 12px;
 				}
 			}
 		}
@@ -100,7 +101,7 @@
 	}
 
 	.snap{
-		
+
 		figure{
 			width: columns(6);
 			float: right;

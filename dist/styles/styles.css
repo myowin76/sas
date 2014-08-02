@@ -183,7 +183,7 @@ header h1 {
 }
 /* line 13, ../../src/sass/partials/articles.scss */
 .articles section header {
-  height: 150px;
+  height: 145px;
   overflow: hidden;
   *zoom: 1;
 }
@@ -194,73 +194,74 @@ header h1 {
 /* line 26, ../../src/sass/partials/articles.scss */
 .articles section .tags ul li {
   float: left;
-  padding: 2px 8px;
+  padding: 0px 4px;
   border-radius: 12px;
   background-color: #f1f1f1;
-  margin-right: 0.5em;
+  margin-right: 0.2em;
+  font-size: 12px;
 }
 
-/* line 38, ../../src/sass/partials/articles.scss */
+/* line 39, ../../src/sass/partials/articles.scss */
 .snap {
   overflow: hidden;
   *zoom: 1;
   padding-left: 0%;
 }
-/* line 42, ../../src/sass/partials/articles.scss */
+/* line 43, ../../src/sass/partials/articles.scss */
 .snap figure {
   width: 100%;
 }
-/* line 45, ../../src/sass/partials/articles.scss */
+/* line 46, ../../src/sass/partials/articles.scss */
 .snap figure img {
   max-width: 100%;
 }
 
 @media (min-width: 42.25em) {
-  /* line 55, ../../src/sass/partials/articles.scss */
+  /* line 56, ../../src/sass/partials/articles.scss */
   .articles section {
     width: 48.52071%;
     margin-right: 1.4em;
   }
-  /* line 59, ../../src/sass/partials/articles.scss */
+  /* line 60, ../../src/sass/partials/articles.scss */
   .articles section:nth-child(2n+1) {
     margin-right: 0px;
   }
 
-  /* line 67, ../../src/sass/partials/articles.scss */
+  /* line 68, ../../src/sass/partials/articles.scss */
   .snap figure {
     width: 48.52071%;
     float: right;
   }
-  /* line 71, ../../src/sass/partials/articles.scss */
+  /* line 72, ../../src/sass/partials/articles.scss */
   .snap figure img {
     max-width: 100%;
   }
-  /* line 76, ../../src/sass/partials/articles.scss */
+  /* line 77, ../../src/sass/partials/articles.scss */
   .snap .features {
     width: 48.52071%;
     padding-left: 0%;
   }
 }
 @media (min-width: 48.125em) {
-  /* line 88, ../../src/sass/partials/articles.scss */
+  /* line 89, ../../src/sass/partials/articles.scss */
   .articles section {
     width: 23.53516%;
   }
-  /* line 91, ../../src/sass/partials/articles.scss */
+  /* line 92, ../../src/sass/partials/articles.scss */
   .articles section:nth-child(2n+1) {
     margin-right: 1.4em;
   }
-  /* line 95, ../../src/sass/partials/articles.scss */
+  /* line 96, ../../src/sass/partials/articles.scss */
   .articles section:nth-child(4n+1) {
     margin-right: 0;
   }
 
-  /* line 104, ../../src/sass/partials/articles.scss */
+  /* line 105, ../../src/sass/partials/articles.scss */
   .snap figure {
     width: 49.02344%;
     float: right;
   }
-  /* line 109, ../../src/sass/partials/articles.scss */
+  /* line 110, ../../src/sass/partials/articles.scss */
   .snap .features {
     width: 40.52734%;
     float: left;

@@ -46,55 +46,54 @@
           	Veniam ad laborum aliquip qui sint ea consequat. Dolore sint ea fugiat laboris excepteur incididunt non officia aliqua tempor do culpa ad elit. Anim enim voluptate reprehenderit nulla nostrud minim adipisicing elit quis excepteur in. Amet laborum pariatur in et reprehenderit quis ex aliquip. Minim nostrud voluptate est est nostrud consequat mollit officia exercitation cupidatat.
           </p>
         </div>
-      </article>  
-      
+      </article> 
 
       <div ng-controller="ArticlesController">
-  <article class="articles">
-          
-    <div class="filter">
-      
-      <div class="count">
-        {{article_count}} articles tagged Water
-      </div>
-
-      <div class="sort">
-        <label>Sort by:
-          <select ng-model="sortLabel" ng-options="label for label in sortLabels">
+        <article class="articles">
+                
+          <div class="filter">
             
-          </select>
-        </label>
-      </div>
+            <div class="count">
+              {{article_count}} articles tagged Water
+            </div>
 
-    </div>
-   
-    <section ng-repeat="article in articles | limitTo:limit | orderBy:articleOrder:direction">
-      
-      <figure>
-        <img ng-src="{{article.image}}" alt="" />
-      </figure>
-      
-      <header>
-        <h2>{{article.title}}</h2>
-        <h4>{{article.date.plain}}</h4> 
-        <p>
-          {{article.caption}}
-        </p>
-      </header> 
-      
-      <footer class="tags">
-        <ul>
-          <li ng-repeat="tag in article.tags">{{tag}}</li>
-        </ul>
-      </footer>
-    </section>
+            <div class="sort">
+              <label>Sort by:
+                <select ng-model="sortLabel" ng-options="label for label in sortLabels">
+                  
+                </select>
+              </label>
+            </div>
+
+          </div>
+         
+          <section ng-repeat="article in articles | orderBy:articleOrder:direction | limitTo:limit">
+            
+            <figure>
+              <img ng-src="{{article.image}}" alt="" />
+            </figure>
+            
+            <header>
+              <h2>{{article.title}}</h2>
+              <h4>{{article.date.plain}}</h4> 
+              <p>
+                {{article.caption}}
+              </p>
+            </header> 
+            
+            <footer class="tags">
+              <ul>
+                <li ng-repeat="tag in article.tags">{{tag}}</li>
+              </ul>
+            </footer>
+          </section>
 
 
-  </article>
-  <div class="load-more">
-    <a ng-click="loadMore()">Load more</a>
-  </div>
-</div>   
+        </article>
+        <div class="load-more">
+          <a ng-click="loadMore()">Load more</a>
+        </div>
+      </div>   
       
     </div>
     

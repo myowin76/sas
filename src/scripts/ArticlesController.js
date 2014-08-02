@@ -6,7 +6,7 @@
 	app.factory('Articles', ['$http', function($http){
 	  return{
 	    get: function(callback){
-	      $http.get('/data/article-data.json').success(function(data){
+	      $http.get('data/article-data.json').success(function(data){
 	        callback(data);
 	      })
 	    }
@@ -20,8 +20,8 @@
 			$scope.limit = 8;
 	    $scope.articles = data; 
 	    $scope.article_count = data.length;
-	    $scope.sortLabels = ["Title", "Most Recent"];
-			$scope.sortLabel = 'Title';
+	    $scope.sortLabels = ["Most Recent", "Title"];
+			$scope.sortLabel = 'Most Recent';
 
 	  });
 
@@ -41,7 +41,7 @@
 			}
 		};
 
-		$scope.equalHeight = function(){
+		$scope.equalHeights = function(){
 
 		};
 
@@ -51,8 +51,5 @@
 	};
 
 	app.controller('ArticlesController', ['$scope', '$http', 'Articles', ArticlesController]);
-
-
-	
 
 }());

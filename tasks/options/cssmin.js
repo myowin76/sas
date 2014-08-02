@@ -2,9 +2,9 @@ module.exports = {
 	
 		minify: {
 	    expand: true,
-	    cwd: 'dist/css/',
+	    cwd: 'dist/styles/',
 	    src: ['*.css', '!*.min.css'],
-	    dest: 'dist/css/',
+	    dest: 'dist/styles/',
 	    ext: '.min.css'
 	  }
 }

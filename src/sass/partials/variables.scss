@@ -3,42 +3,25 @@
 $base-line-height             : 25px;
 $form-line-height             : 25px;
 
-
 // Default font size and font color
 $fonts 												: Arial, Sans-serifs;
 $base-font-size               : 14px;
 $font-color                   : #333333;
 
 $total-columns  : 12;
-$column-width   : 67px/$base-font-size *1em;
-$gutter-width   : 20px/$base-font-size *1em;
+$column-width   : 67px/$base-font-size * 1em;
+$gutter-width   : 20px/$base-font-size * 1em;
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
-$max-width      : 1024px/$base-font-size *1em;
+$max-width      : 1024px/$base-font-size * 1em;
 
 $mobiles				: 3;
 $tablets				: 8;
 $desktop				: 55em 12;
 
-
 $black					: #000000 !default;
 $white					: #ffffff !default;
 $light-gray			: #f1f1f1 !default;
 $gray						: #cccccc !default;
-
-// $mobile-portrait  : "only screen and (max-width : 320px) and (max-width : 480px)";
-// $mobile-landscape : "only screen and (min-width : 321px)";
-// $tablet-portrait  : "only screen and (min-width : 768px) and (orientation : portrait)";
-// $tablet-landscape : "only screen and (min-width : 768px) and (orientation : landscape)";
-
-//article title (14px)
-//date (12px)
-//content 14px
-//load more 12px
-//picture desc 12px
-//case studies title 35px;
-//article count 18px
-//sortby /most recent 12px;
-
 
 $DEBUG                        : true;
 $experimental-support-for-svg : true;

@@ -17,7 +17,7 @@
 
     </div>
    
-    <section ng-repeat="article in articles | orderBy:articleOrder:direction">
+    <section ng-repeat="article in articles | orderBy:articleOrder:direction | limitTo:limit">
       
       <figure>
         <img ng-src="{{article.image}}" alt="" />
