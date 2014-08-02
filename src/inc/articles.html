@@ -1,4 +1,4 @@
-<div ng-controller="ArticlesController" ng-init="init()">
+<div ng-controller="ArticlesController">
   <article class="articles">
           
     <div class="filter">
@@ -13,8 +13,8 @@
             
           </select>
         </label>
-        
       </div>
+
     </div>
    
     <section ng-repeat="article in articles | orderBy:articleOrder:direction">
@@ -40,4 +40,7 @@
 
 
   </article>
+  <div class="load-more">
+    <a ng-click="loadMore()">Load more</a>
+  </div>
 </div>

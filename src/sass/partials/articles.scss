@@ -41,24 +41,18 @@
 
 	figure{
 		width: columns(12);
+		
 		img{
 			max-width: 100%;
 		}
 	}
-
-	.features{
-		
-	}
 }
-
-
 
 @include at-breakpoint($tablets) {
 	
 	.articles{
 
 		section{
-
 			width: columns(4);
 			margin-right: 1.4em;
 
@@ -69,11 +63,11 @@
 	}
 
 	.snap{
-		
 
 		figure{
 			width: columns(4);
 			float: right;
+			
 			img{
 				max-width: 100%;
 			}
@@ -106,6 +100,7 @@
 	}
 
 	.snap{
+		
 		figure{
 			width: columns(6);
 			float: right;

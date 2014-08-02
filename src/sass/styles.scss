@@ -8,3 +8,22 @@
 @import "partials/articles";
 @import "partials/filter";
 
+
+
+.load-more{
+	@include clearfix;
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1em 0;
+
+	a{
+		font-weight: bold;
+		background: $light-gray url(../images/loading.png) no-repeat 10%;
+		padding: 1em 1em 1em 3em;
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}

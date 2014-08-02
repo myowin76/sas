@@ -30,8 +30,8 @@ img{
 }
 
 header{
-	padding: 0.5em 0;
-	
+	padding: 1em 0;
+
 	h1{
 		@include prefix(0);
 	}

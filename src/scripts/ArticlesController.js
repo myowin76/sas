@@ -2,23 +2,28 @@
 
 	var app = angular.module('ArticlesLoader', []);
 
-	var ArticlesController = function($scope, $http){
+	// Service
+	app.factory('Articles', ['$http', function($http){
+	  return{
+	    get: function(callback){
+	      $http.get('/data/article-data.json').success(function(data){
+	        callback(data);
+	      })
+	    }
+	  }
+	}]);
+
+	// Controller
+	var ArticlesController = function($scope, $http, Articles){
 		
-		$scope.init = function(){
-			$http.get("/data/article-data.json").success(function(data){
-				
-				$scope.article_count = data.length;
-				$scope.articles = data;
+		Articles.get(function(data){
+			$scope.limit = 8;
+	    $scope.articles = data; 
+	    $scope.article_count = data.length;
+	    $scope.sortLabels = ["Title", "Most Recent"];
+			$scope.sortLabel = 'Title';
 
-				$scope.sortLabels = ["Title", "Most Recent"];
-
-				$scope.sortLabel = 'Title';
-
-			}).error(function(error) {
- 
-      });
-		};
-
+	  });
 
 		$scope.articleOrder = function(article) {
 			
@@ -37,14 +42,17 @@
 		};
 
 		$scope.equalHeight = function(){
-			
-		}
+
+		};
 
 		$scope.loadMore = function(){
-			console.log("load more please");
+			$scope.limit += 8;
 		};
 	};
 
-	app.controller('ArticlesController', ['$scope', '$http', ArticlesController]);
+	app.controller('ArticlesController', ['$scope', '$http', 'Articles', ArticlesController]);
+
+
+	
 
 }());

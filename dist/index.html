@@ -14,9 +14,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     
-    <script src='/scripts/libs/modernizr.min.js'></script>
+    <script src='scripts/libs/modernizr.min.js'></script>
     
-    <link href='/styles/styles.css' rel='stylesheet' />
+    <link href='styles/styles.css' rel='stylesheet' />
     <!--[if lt IE 9]>
     	<link href='/styles/ie.css' rel='stylesheet' />	  	  	
     	<script src='/scripts/ie/media.match.min.js'></script>
@@ -38,7 +38,7 @@
       
       <article class="snap">
         <figure>
-          <img src="../images/image1.jpg" alt="" />
+          <img src="images/image1.jpg" alt="" />
         </figure>
         <div class="features">
           <h2>Features article story title</h2>
@@ -47,7 +47,9 @@
           </p>
         </div>
       </article>  
-      <div ng-controller="ArticlesController" ng-init="init()">
+      
+
+      <div ng-controller="ArticlesController">
   <article class="articles">
           
     <div class="filter">
@@ -62,11 +64,11 @@
             
           </select>
         </label>
-        
       </div>
+
     </div>
    
-    <section ng-repeat="article in articles | orderBy:articleOrder:direction">
+    <section ng-repeat="article in articles | limitTo:limit | orderBy:articleOrder:direction">
       
       <figure>
         <img ng-src="{{article.image}}" alt="" />
@@ -89,20 +91,19 @@
 
 
   </article>
-</div>    
+  <div class="load-more">
+    <a ng-click="loadMore()">Load more</a>
+  </div>
+</div>   
       
     </div>
     
     <footer>
         
     </footer>
-    <!-- <script src='scripts/libs/jquery.min.js'></script>
-    <script src='scripts/libs/enquire.min.js'></script> -->
-    
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js'></script>
     <script src='https://code.angularjs.org/1.2.21/angular-route.min.js'></script>
     
     <script src='scripts/ArticlesController.js'></script>
-    <script src='scripts/scripts.min.js'></script>
   </body>
 </html>
